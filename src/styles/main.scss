@@ -1,5 +1,15 @@
 @import "~bootstrap/scss/bootstrap";
 
 body {
-  background-color: turquoise;
+  background-color: whitesmoke;
+}
+
+nav {
+  background-color: rgb(228,234,243);
+  box-shadow: 3px 3px 10px #7c7976;
+  color: 	rgb(1,97,97);
+}
+
+.btn-secondary {
+  background-color:	rgb(1, 97, 97)
 }
