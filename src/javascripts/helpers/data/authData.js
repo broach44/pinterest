@@ -5,6 +5,8 @@ import $ from 'jquery';
 const notifySignedIn = $('#checkSignIn');
 const authDiv = $('#auth');
 const logoutButton = $('#navbar-button-logout');
+const myBoards = $('#boardTitle');
+const mainPinterest = $('#pinterestTitle');
 
 const checkLoginStatus = () => {
   firebase.auth().onAuthStateChanged((user) => {
@@ -13,11 +15,15 @@ const checkLoginStatus = () => {
       notifySignedIn.removeClass('hide');
       authDiv.addClass('hide');
       logoutButton.removeClass('hide');
+      mainPinterest.addClass('hide');
+      myBoards.removeClass('hide');
     } else {
       // what should happen if not logged in
       notifySignedIn.addClass('hide');
       authDiv.removeClass('hide');
       logoutButton.addClass('hide');
+      mainPinterest.removeClass('hide');
+      myBoards.addClass('hide');
     }
   });
 };
