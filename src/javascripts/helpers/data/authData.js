@@ -5,7 +5,7 @@ import $ from 'jquery';
 const notifySignedIn = $('#checkSignIn');
 const authDiv = $('#auth');
 const logoutButton = $('#navbar-button-logout');
-const myBoards = $('#boardTitle');
+const myBoards = $('#boardDiv');
 const mainPinterest = $('#pinterestTitle');
 
 const checkLoginStatus = () => {
