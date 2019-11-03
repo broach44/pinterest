@@ -1,12 +1,12 @@
 // import firebase from 'firebase';
-import users from '../../helpers/data/userData';
-import boardData from '../../helpers/data/boardData';
+import smash from '../../helpers/data/smash';
+
 // const getCurrentUid = () => firebase.auth().currentUser.uid;
 
 const buildUserBoards = () => {
-  users.getUsers()
-    .then((user) => {
-      console.log(boardData.getBoardsByUid(user.uid));
+  smash.getCompleteUserDatas()
+    .then((boards) => {
+      console.log(boards);
     })
     .catch((error) => console.error(error));
 };
