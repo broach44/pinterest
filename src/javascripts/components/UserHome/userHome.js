@@ -1,12 +1,12 @@
 // import firebase from 'firebase';
 import users from '../../helpers/data/userData';
-
+import boardData from '../../helpers/data/boardData';
 // const getCurrentUid = () => firebase.auth().currentUser.uid;
 
 const buildUserBoards = () => {
   users.getUsers()
     .then((user) => {
-      console.log(user.uid);
+      console.log(boardData.getBoardsByUid(user.uid));
     })
     .catch((error) => console.error(error));
 };
