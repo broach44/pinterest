@@ -7,24 +7,27 @@ import boardMaker from '../Boards/boards';
 import './userHome.scss';
 
 const doSomethingFunc = (e) => {
-  console.log(e.target.parentNode);
+  const targetedBoard = e.target.parentNode;
+  const boardId = $(targetedBoard).attr('id');
+  console.log(`You clicked the ${boardId} board`);
 };
 
 const buildUserBoards = () => {
   smash.getCompleteUserDatas()
     .then((boards) => {
       console.log(boards);
-      let domString = '<h2>User Boards</h2>';
+      let domString = `
+      <h2>User Boards</h2>
+      <div class="container d-flex flex-wrap">
+      `;
       boards.forEach((board) => {
         domString += boardMaker.makeABoard(board);
       });
+      domString += '</div>';
       utilities.printToDom('boardDiv', domString);
       $('.boardCard').on('click', doSomethingFunc);
     })
     .catch((error) => console.error(error));
 };
-// 1. When a user logs in
-// 2. Check which user is logged in
-// 3. Pull their boards from the database to display on their home page
 
 export default { buildUserBoards };

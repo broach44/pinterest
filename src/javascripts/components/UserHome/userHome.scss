@@ -1,12 +1,19 @@
-
+.card {
+  margin: 15px;
+  height: auto;
+}
 .card-img {
   pointer-events: inherit;
+  height: auto;
 }
 
 .card-body {
   pointer-events: inherit;
+  min-height: 50px;
+  padding: 0;
 }
 
 .card-title {
   pointer-events: none;
+  margin: 0;
 }
