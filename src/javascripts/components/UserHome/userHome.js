@@ -1,8 +1,14 @@
-// import firebase from 'firebase';
+import $ from 'jquery';
+
 import smash from '../../helpers/data/smash';
 import utilities from '../../helpers/utilities';
 import boardMaker from '../Boards/boards';
-// const getCurrentUid = () => firebase.auth().currentUser.uid;
+
+import './userHome.scss';
+
+const doSomethingFunc = (e) => {
+  console.log(e.target.parentNode);
+};
 
 const buildUserBoards = () => {
   smash.getCompleteUserDatas()
@@ -13,6 +19,7 @@ const buildUserBoards = () => {
         domString += boardMaker.makeABoard(board);
       });
       utilities.printToDom('boardDiv', domString);
+      $('.boardCard').on('click', doSomethingFunc);
     })
     .catch((error) => console.error(error));
 };
