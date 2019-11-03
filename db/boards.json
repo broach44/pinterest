@@ -1,0 +1,22 @@
+{
+  "board1": {
+    "boardTitle": "HairStyles",
+    "isPrivate": false,
+    "uid": "5Fysy9293SfHLt1lbd67Ot21IVc2"
+  },
+  "board2": {
+    "boardTitle": "Pie Recipes",
+    "isPrivate": false,
+    "uid": "5Fysy9293SfHLt1lbd67Ot21IVc2"
+  },
+  "board3": {
+    "boardTitle": "Gift Ideas",
+    "isPrivate": false,
+    "uid": "5Fysy9293SfHLt1lbd67Ot21IVc2"
+  },
+  "board4": {
+    "boardTitle": "Someone Else's Board",
+    "isPrivate": false,
+    "uid": "12345"
+  }
+}

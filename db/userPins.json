@@ -1,0 +1,56 @@
+{
+  "userPin1" : {
+    "pinId": "pin6",
+    "uid": "5Fysy9293SfHLt1lbd67Ot21IVc2",
+    "boardId": "board3",
+    "userTried": false
+  },
+  "userPin2" : {
+    "pinId": "pin12",
+    "uid": "5Fysy9293SfHLt1lbd67Ot21IVc2",
+    "boardId": "board2",
+    "userTried": false
+  },
+  "userPin3" : {
+    "pinId": "pin1",
+    "uid": "5Fysy9293SfHLt1lbd67Ot21IVc2",
+    "boardId": "board2",
+    "userTried": false
+  },
+  "userPin4" : {
+    "pinId": "pin7",
+    "uid": "5Fysy9293SfHLt1lbd67Ot21IVc2",
+    "boardId": "board3",
+    "userTried": false
+  },
+  "userPin5" : {
+    "pinId": "pin9",
+    "uid": "5Fysy9293SfHLt1lbd67Ot21IVc2",
+    "boardId": "board3",
+    "userTried": false
+  },
+  "userPin6" : {
+    "pinId": "pin8",
+    "uid": "5Fysy9293SfHLt1lbd67Ot21IVc2",
+    "boardId": "board1",
+    "userTried": false
+  },
+  "userPin7" : {
+    "pinId": "pin11",
+    "uid": "5Fysy9293SfHLt1lbd67Ot21IVc2",
+    "boardId": "board2",
+    "userTried": false
+  },
+  "userPin8" : {
+    "pinId": "pin10",
+    "uid": "5Fysy9293SfHLt1lbd67Ot21IVc2",
+    "boardId": "board1",
+    "userTried": false
+  },
+  "userPin9" : {
+    "pinId": "pin15",
+    "uid": "5Fysy9293SfHLt1lbd67Ot21IVc2",
+    "boardId": "board2",
+    "userTried": false
+  }
+}
