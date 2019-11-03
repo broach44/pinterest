@@ -1,12 +1,18 @@
 // import firebase from 'firebase';
 import smash from '../../helpers/data/smash';
-
+import utilities from '../../helpers/utilities';
+import boardMaker from '../Boards/boards';
 // const getCurrentUid = () => firebase.auth().currentUser.uid;
 
 const buildUserBoards = () => {
   smash.getCompleteUserDatas()
     .then((boards) => {
       console.log(boards);
+      let domString = '<h2>User Boards</h2>';
+      boards.forEach((board) => {
+        domString += boardMaker.makeABoard(board);
+      });
+      utilities.printToDom('boardDiv', domString);
     })
     .catch((error) => console.error(error));
 };
