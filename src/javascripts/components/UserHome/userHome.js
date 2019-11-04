@@ -3,14 +3,9 @@ import $ from 'jquery';
 import smash from '../../helpers/data/smash';
 import utilities from '../../helpers/utilities';
 import boardMaker from '../Boards/boards';
+import pinItems from '../boardPins/boardPins';
 
 import './userHome.scss';
-
-const doSomethingFunc = (e) => {
-  const targetedBoard = e.target.parentNode;
-  const boardId = $(targetedBoard).attr('id');
-  console.log(`You clicked the ${boardId} board`);
-};
 
 const buildUserBoards = () => {
   smash.getCompleteUserDatas()
@@ -24,7 +19,7 @@ const buildUserBoards = () => {
       });
       domString += '</div>';
       utilities.printToDom('boardDiv', domString);
-      $('.boardCard').on('click', doSomethingFunc);
+      $('.boardCard').on('click', pinItems.makePinBoard);
     })
     .catch((error) => console.error(error));
 };

@@ -4,7 +4,6 @@ import auth from './components/Auth/auth';
 import authData from './helpers/data/authData';
 import myNavbar from './components/MyNavbar/myNavbar';
 import userHome from './components/UserHome/userHome';
-import boardPins from './components/boardPins/boardPins';
 
 import apiKeys from './helpers/apiKeys.json';
 
@@ -17,7 +16,6 @@ const init = () => {
   auth.loginButton();
   myNavbar.logoutEvent();
   userHome.buildUserBoards();
-  boardPins.makePinBoard('Pie Recipes');
 };
 
 init();
