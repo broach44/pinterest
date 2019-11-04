@@ -6,6 +6,7 @@ const notifySignedIn = $('#checkSignIn');
 const authDiv = $('#auth');
 const logoutButton = $('#navbar-button-logout');
 const myBoards = $('#boardDiv');
+const userPinArea = $('#userPinDiv');
 const mainPinterest = $('#pinterestTitle');
 
 const checkLoginStatus = () => {
@@ -17,6 +18,7 @@ const checkLoginStatus = () => {
       logoutButton.removeClass('hide');
       mainPinterest.addClass('hide');
       myBoards.removeClass('hide');
+      userPinArea.addClass('hide');
     } else {
       // what should happen if not logged in
       notifySignedIn.addClass('hide');
@@ -24,6 +26,7 @@ const checkLoginStatus = () => {
       logoutButton.addClass('hide');
       mainPinterest.removeClass('hide');
       myBoards.addClass('hide');
+      userPinArea.addClass('hide');
     }
   });
 };
