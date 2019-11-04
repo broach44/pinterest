@@ -12,7 +12,7 @@ const getUserPinsByUid = (uid) => new Promise((resolve, reject) => {
         demUserPins[fbId].id = fbId;
         userPins.push(demUserPins[fbId]);
       });
-      resolve(userPins); // Hard code to only return first user
+      resolve(userPins);
     })
     .catch((error) => reject(error));
 });

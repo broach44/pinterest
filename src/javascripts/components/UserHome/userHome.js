@@ -15,7 +15,6 @@ const doSomethingFunc = (e) => {
 const buildUserBoards = () => {
   smash.getCompleteUserDatas()
     .then((boards) => {
-      console.log(boards);
       let domString = `
       <h2>User Boards</h2>
       <div class="container d-flex flex-wrap">
