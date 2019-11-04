@@ -7,7 +7,7 @@ const makeABoard = (board) => {
     <div class="card-body text-center">
       <h5 class="card-title">${board.boardTitle}</h5>
     </div>
-</div>
+  </div>
   `;
   return domString;
 };
