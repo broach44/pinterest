@@ -27,6 +27,7 @@ const makePinBoard = (e) => {
       const pinnedItems = titleOfBoard.pinItems;
       pinnedItems.forEach((pinItem) => {
         const pinItemList = pinItem.pinId;
+        console.log('image url', pinItemList.imageUrl);
         domString += makePinCard.makePinCard(pinItemList);
       });
       domString += '</div>';
