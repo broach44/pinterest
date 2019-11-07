@@ -20,6 +20,7 @@ const buildUserBoards = () => {
       domString += '</div>';
       utilities.printToDom('boardDiv', domString);
       $('.boardCard').on('click', pinItems.makePinBoard);
+      console.log(boards);
     })
     .catch((error) => console.error(error));
 };
