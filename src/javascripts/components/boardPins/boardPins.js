@@ -19,10 +19,13 @@ const goback = () => {
 // const uid = getCurrentUid();
 // console.log('what user is logged', uid);
 
+// Look at some options to get the boardId from the userPinsId and way to pass into the make pin board
+// let tempPinNum = '';
+
 const deletePin = (e) => {
   e.preventDefault();
-  const pinId = e.target.id.split('delete-pin-')[1];
-  userPinsData.deleteUserPin(pinId)
+  const userPinId = e.target.id.split('delete-pin-')[1];
+  userPinsData.deleteUserPin(userPinId)
     .then(() => {
     // TODO: need to reprint the pins here
     })
