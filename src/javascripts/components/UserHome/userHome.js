@@ -7,6 +7,7 @@ import pinItems from '../boardPins/boardPins';
 
 import './userHome.scss';
 
+
 const buildUserBoards = () => {
   smash.getCompleteUserDatas()
     .then((boards) => {
@@ -20,7 +21,7 @@ const buildUserBoards = () => {
       domString += '</div>';
       utilities.printToDom('boardDiv', domString);
       $('.boardCard').on('click', pinItems.makePinBoard);
-      console.log(boards);
+      console.log('build boards func', boards);
     })
     .catch((error) => console.error(error));
 };
