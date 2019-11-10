@@ -43,7 +43,7 @@ const makePinBoard = (e) => {
       <h4 id="backToBoards">Go Back to Boards</h4>
       <div class="container d-flex flex-wrap">
       `;
-      const titleOfBoard = boards.find((x) => x.boardTitle === boardId);
+      const titleOfBoard = boards.find((x) => x.id === boardId);
       const pinnedItems = titleOfBoard.pinItems;
       pinnedItems.forEach((pinItem) => {
         const pinItemList = pinItem.pinId;
