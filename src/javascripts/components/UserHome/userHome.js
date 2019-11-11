@@ -32,21 +32,20 @@ const deleteBoard = (e) => {
     .catch((error) => console.error(error));
 };
 
-const createNewUserPin = (e, newPinId) => {
-  e.stopImmediatePropagation();
-  const { uid } = firebase.auth().currentUser;
-  const newUserPin = {
-    pinId: newPinId,
-    uid,
-    boardId: $('#pin-board-id').val(),
-  };
-  userPins.addNewUserPin(newUserPin)
-    .then(() => {
-      // reprint here
-      pinItems.printPinBoard(newUserPin.boardId);
-    })
-    .catch((error) => console.error(error));
-};
+// const createNewUserPin = (e, newPinId) => {
+//   e.stopImmediatePropagation();
+//   const { uid } = firebase.auth().currentUser;
+//   const newUserPin = {
+//     pinId: newPinId,
+//     uid,
+//     boardId: $('#pin-board-id').val(),
+//   };
+//   userPins.addNewUserPin(newUserPin)
+//     .then(() => {
+//       pinItems.printPinBoard(newUserPin.boardId);
+//     })
+//     .catch((error) => console.error(error));
+// };
 
 const addNewPin = (e) => {
   e.stopImmediatePropagation();
@@ -57,14 +56,18 @@ const addNewPin = (e) => {
     siteUrl: $('#pin-site-url').val(),
     title: $('#pin-title').val(),
   };
+  const boardIdSelection = $('input[name=boardRadios]:checked').val();
   pinData.addNewPin(newPin)
     .then((response) => {
       $('#addPinModal').modal('hide');
-      // add to userPins so it will display on a board
-      // reprint boards or pins
       const newPinId = response.data.name;
-      // add to userPins and create new UserPin for the board selected
-      createNewUserPin(e, newPinId);
+      const { uid } = firebase.auth().currentUser;
+      const newUserPin = {
+        pinId: newPinId,
+        uid,
+        boardId: boardIdSelection,
+      };
+      userPins.addNewUserPin(newUserPin);
     })
     .catch((error) => console.error(error));
 };
