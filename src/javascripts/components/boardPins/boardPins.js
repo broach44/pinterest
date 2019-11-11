@@ -15,28 +15,22 @@ const goback = () => {
   usersPinArea.addClass('hide');
 };
 
-// const getCurrentUid = () => firebase.auth().currentUser.uid;
-// const uid = getCurrentUid();
-// console.log('what user is logged', uid);
-
-// Look at some options to get the boardId from the userPinsId and way to pass into the make pin board
-// let tempPinNum = '';
-
 const deletePin = (e) => {
   e.preventDefault();
   const userPinId = e.target.id.split('delete-pin-')[1];
+  // eslint-disable-next-line no-use-before-define
   userPinsData.deleteUserPin(userPinId)
     .then(() => {
-    // TODO: need to reprint the pins here
+      // eslint-disable-next-line no-use-before-define
+      printPinBoard(currentBoard);
     })
     .catch((error) => console.error(error));
 };
 
-const makePinBoard = (e) => {
-  const targetedBoard = e.target.parentNode; // targeting to get the board id
-  const boardId = $(targetedBoard).attr('id');
-  userBoards.addClass('hide');
-  usersPinArea.removeClass('hide');
+let currentBoard = '';
+
+const printPinBoard = (boardId) => {
+  currentBoard = boardId;
   smash.getCompleteUserDatas()
     .then((boards) => {
       let domString = `
@@ -49,8 +43,6 @@ const makePinBoard = (e) => {
         const pinItemList = pinItem.pinId;
         const userPinId = pinItem.id;
         domString += makePinCard.makePinCard(pinItemList, userPinId);
-        console.log('pin item', pinItem);
-        console.log('pin userPinId', pinItem.id);
       });
       domString += '</div>';
       utilities.printToDom('userPinDiv', domString);
@@ -58,6 +50,14 @@ const makePinBoard = (e) => {
       $('#userPinDiv').on('click', deletePin);
     })
     .catch((error) => console.error(error));
+};
+
+const makePinBoard = (e) => {
+  const targetedBoard = e.target.parentNode;
+  const boardId = $(targetedBoard).attr('id');
+  userBoards.addClass('hide');
+  usersPinArea.removeClass('hide');
+  printPinBoard(boardId);
 };
 
 
