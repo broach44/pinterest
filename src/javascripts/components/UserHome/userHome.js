@@ -14,6 +14,7 @@ import './userHome.scss';
 
 const deleteBoard = (e) => {
   e.preventDefault();
+  const { uid } = firebase.auth().currentUser;
   const boardId = e.target.id.split('delete-board-')[1];
   userPins.getUserPinsByBoardId(boardId)
     .then((pins) => {
@@ -26,7 +27,22 @@ const deleteBoard = (e) => {
   boardData.deleteUserBoard(boardId)
     .then(() => {
       // eslint-disable-next-line no-use-before-define
-      buildUserBoards();
+      buildUserBoards(uid);
+    })
+    .catch((error) => console.error(error));
+};
+
+const createNewUserPin = (e, newPinId) => {
+  e.stopImmediatePropagation();
+  const { uid } = firebase.auth().currentUser;
+  const newUserPin = {
+    pinId: newPinId,
+    uid,
+    boardId: 'board1',
+  };
+  userPins.addNewUserPin(newUserPin)
+    .then(() => {
+      // reprint here
     })
     .catch((error) => console.error(error));
 };
@@ -41,10 +57,13 @@ const addNewPin = (e) => {
     title: $('#pin-title').val(),
   };
   pinData.addNewPin(newPin)
-    .then(() => {
+    .then((response) => {
       $('#addPinModal').modal('hide');
       // add to userPins so it will display on a board
       // reprint boards or pins
+      const newPinId = response.data.name;
+      // add to userPins and create new UserPin for the board selected
+      createNewUserPin(e, newPinId);
     })
     .catch((error) => console.error(error));
 };
@@ -65,8 +84,8 @@ const addNewBoard = (e) => {
     .catch((error) => console.error(error));
 };
 
-const buildUserBoards = () => {
-  smash.getCompleteUserDatas()
+const buildUserBoards = (uid) => {
+  smash.getCompleteUserDatas(uid)
     .then((boards) => {
       let domString = `
       <h2>User Boards</h2>

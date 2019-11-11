@@ -1,6 +1,7 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import $ from 'jquery';
+import userHome from '../../components/UserHome/userHome';
 
 const authDiv = $('#auth');
 const logoutButton = $('#navbar-button-logout');
@@ -19,6 +20,8 @@ const checkLoginStatus = () => {
       myBoards.removeClass('hide');
       userPinArea.addClass('hide');
       addContentDiv.removeClass('hide');
+      const userId = user.uid;
+      userHome.buildUserBoards(userId);
     } else {
       // what should happen if not logged in
       authDiv.removeClass('hide');
