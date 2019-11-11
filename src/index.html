@@ -15,8 +15,107 @@
     </nav>
     
     <h1 id="pinterestTitle">Pinterest</h1>
+    <div id="addContentDiv">
+      <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#addPinModal">
+        Create New Pin
+      </button>
+      <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#addBoardModal">
+        Create New Board
+      </button>
+    </div>
     <div id="boardDiv" class="mx-5"></div>
     <div id="userPinDiv" class="container">UserPinDiv</div>
     
+    <div class="modal fade" id="addPinModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Create New Pin</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="pin-category">Category</label>
+                <input type="text" class="form-control" id="pin-category" placeholder="Dinner Ideas">
+              </div>
+              <div class="form-group">
+                <label for="pin-title">Title</label>
+                <input type="text" class="form-control" id="pin-title" placeholder="Spaghetti">
+              </div>
+              <div class="form-group">
+                <label for="pin-description">Description</label>
+                <input type="text" class="form-control" id="pin-description" placeholder="Crowd pleasing homemade recipe for spaghetti">
+              </div>
+              <div class="form-group">
+                <label for="pin-image-url">Pin Image Url</label>
+                <input type="text" class="form-control" id="pin-image-url" placeholder="Enter url...">
+              </div>
+              <div class="form-group">
+                <label for="pin-site-url">Site Url</label>
+                <input type="text" class="form-control" id="pin-site-url" placeholder="Enter url...">
+              </div>
+              <p>Select a Board: </p>
+              <div class="form-group" id="newPin-modal-radios">
+                <!-- <div class="form-check">
+                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                  <label class="form-check-label" for="exampleRadios1">
+                    Hairstyles
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                  <label class="form-check-label" for="exampleRadios2">
+                    Pie Recipes
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                  <label class="form-check-label" for="exampleRadios2">
+                    Gift Ideas
+                  </label>
+                </div> -->
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-info" id="add-new-Pin">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="addBoardModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Create New Board</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="board-title">Title</label>
+                <input type="text" class="form-control" id="board-title" placeholder="Dessert Recipes">
+              </div>
+              <div class="form-group">
+                <label for="board-image-url">Image Url</label>
+                <input type="text" class="form-control" id="board-image-url" placeholder="Enter image Url">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-info" id="add-new-Board">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
 </body>
 </html>

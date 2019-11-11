@@ -1,6 +1,6 @@
 import $ from 'jquery';
-// import firebase from 'firebase/app';
-// import 'firebase/auth';
+import firebase from 'firebase/app';
+import 'firebase/auth';
 
 import smash from '../../helpers/data/smash';
 import utilities from '../../helpers/utilities';
@@ -31,7 +31,8 @@ let currentBoard = '';
 
 const printPinBoard = (boardId) => {
   currentBoard = boardId;
-  smash.getCompleteUserDatas()
+  const { uid } = firebase.auth().currentUser;
+  smash.getCompleteUserDatas(uid)
     .then((boards) => {
       let domString = `
       <h4 id="backToBoards">Go Back to Boards</h4>
