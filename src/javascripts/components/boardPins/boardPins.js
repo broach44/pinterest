@@ -34,7 +34,6 @@ const printPinBoard = (boardId) => {
   const { uid } = firebase.auth().currentUser;
   smash.getCompleteUserDatas(uid)
     .then((boards) => {
-      console.log(boards);
       let domString = `
       <h4 id="backToBoards">Go Back to Boards</h4>
       <div class="container d-flex flex-wrap">

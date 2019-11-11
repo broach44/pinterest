@@ -38,11 +38,12 @@ const createNewUserPin = (e, newPinId) => {
   const newUserPin = {
     pinId: newPinId,
     uid,
-    boardId: 'board1',
+    boardId: $('#pin-board-id').val(),
   };
   userPins.addNewUserPin(newUserPin)
     .then(() => {
       // reprint here
+      pinItems.printPinBoard(newUserPin.boardId);
     })
     .catch((error) => console.error(error));
 };
@@ -74,7 +75,6 @@ const addNewBoard = (e) => {
   const newBoard = {
     boardTitle: $('#board-title').val(),
     boardImg: $('#board-image').val(),
-    isPrivate: $('#board-privacy').val(),
     uid,
   };
   boardData.addBoard(newBoard)
@@ -95,7 +95,12 @@ const buildUserBoards = (uid) => {
         domString += boardMaker.makeABoard(board);
       });
       domString += '</div>';
+      let domString2 = '';
+      boards.forEach((board) => {
+        domString2 += boardMaker.createRadioOptions(board);
+      });
       utilities.printToDom('boardDiv', domString);
+      utilities.printToDom('newPin-modal-radios', domString2);
       $('.boardCard').on('click', 'img', pinItems.makePinBoard);
       $('.boardCard').on('click', '.deleteBoard', deleteBoard);
       $('#add-new-Pin').on('click', addNewPin);

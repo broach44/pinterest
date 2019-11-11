@@ -1,5 +1,17 @@
 import './boards.scss';
 
+const createRadioOptions = (board) => {
+  const domString2 = `
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="boardRadios" id="${board.boardTitle}" value="${board.id}">
+    <label class="form-check-label" for="${board.boardTitle}">
+      ${board.boardTitle}
+    </label>
+  </div>
+  `;
+  return domString2;
+};
+
 const makeABoard = (board) => {
   const domString = `
   <div class="card col-3 p-0 boardCard" id="${board.id}">
@@ -13,4 +25,4 @@ const makeABoard = (board) => {
   return domString;
 };
 
-export default { makeABoard };
+export default { makeABoard, createRadioOptions };
