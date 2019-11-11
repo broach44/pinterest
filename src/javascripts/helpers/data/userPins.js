@@ -17,6 +17,20 @@ const getUserPinsByUid = (uid) => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
+const getUserPinsByBoardId = (boardId) => new Promise((resolve, reject) => {
+  axios.get(`${baseUrl}/userPins.json?orderBy="boardId"&equalTo="${boardId}"`)
+    .then((response) => {
+      const demUserPins = response.data;
+      const userPins = [];
+      Object.keys(demUserPins).forEach((fbId) => {
+        demUserPins[fbId].id = fbId;
+        userPins.push(demUserPins[fbId]);
+      });
+      resolve(userPins);
+    })
+    .catch((error) => reject(error));
+});
+
 const deleteUserPin = (userPinId) => axios.delete(`${baseUrl}/userPins/${userPinId}.json`);
 
-export default { getUserPinsByUid, deleteUserPin };
+export default { getUserPinsByUid, deleteUserPin, getUserPinsByBoardId };
