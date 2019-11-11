@@ -7,6 +7,7 @@ const logoutButton = $('#navbar-button-logout');
 const myBoards = $('#boardDiv');
 const userPinArea = $('#userPinDiv');
 const mainPinterest = $('#pinterestTitle');
+const addContentDiv = $('#addContentDiv');
 
 const checkLoginStatus = () => {
   firebase.auth().onAuthStateChanged((user) => {
@@ -17,6 +18,7 @@ const checkLoginStatus = () => {
       mainPinterest.addClass('hide');
       myBoards.removeClass('hide');
       userPinArea.addClass('hide');
+      addContentDiv.removeClass('hide');
     } else {
       // what should happen if not logged in
       authDiv.removeClass('hide');
@@ -24,6 +26,7 @@ const checkLoginStatus = () => {
       mainPinterest.removeClass('hide');
       myBoards.addClass('hide');
       userPinArea.addClass('hide');
+      addContentDiv.addClass('hide');
     }
   });
 };

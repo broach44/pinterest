@@ -17,4 +17,6 @@ const getPins = () => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
-export default { getPins };
+const addNewPin = (newPin) => axios.post(`${baseUrl}/pins.json`, newPin);
+
+export default { getPins, addNewPin };

@@ -6,6 +6,7 @@ import boardMaker from '../Boards/boards';
 import pinItems from '../boardPins/boardPins';
 import boardData from '../../helpers/data/boardData';
 import userPins from '../../helpers/data/userPins';
+import pinData from '../../helpers/data/pins';
 
 import './userHome.scss';
 
@@ -28,6 +29,25 @@ const deleteBoard = (e) => {
     .catch((error) => console.error(error));
 };
 
+const addNewPin = (e) => {
+  e.stopImmediatePropagation();
+  const newPin = {
+    category: $('#pin-category').val(),
+    description: $('#pin-description').val(),
+    imageUrl: $('#pin-image-url').val(),
+    siteUrl: $('#pin-site-url').val(),
+    title: $('#pin-title').val(),
+  };
+  console.log('before add', newPin);
+  pinData.addNewPin(newPin)
+    .then(() => {
+      $('#addPinModal').modal('hide');
+      // eslint-disable-next-line no-use-before-define
+      console.log('added pin', newPin);
+    })
+    .catch((error) => console.error(error));
+};
+
 const buildUserBoards = () => {
   smash.getCompleteUserDatas()
     .then((boards) => {
@@ -41,8 +61,8 @@ const buildUserBoards = () => {
       domString += '</div>';
       utilities.printToDom('boardDiv', domString);
       $('.boardCard').on('click', 'img', pinItems.makePinBoard);
-      // put in listener
       $('.boardCard').on('click', '.deleteBoard', deleteBoard);
+      $('#add-new-Pin').on('click', addNewPin);
     })
     .catch((error) => console.error(error));
 };
