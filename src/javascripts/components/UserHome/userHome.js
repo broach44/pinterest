@@ -106,6 +106,7 @@ const buildUserBoards = (uid) => {
       });
       utilities.printToDom('boardDiv', domString);
       utilities.printToDom('newPin-modal-radios', domString2);
+      utilities.printToDom('updateUserPin-modal-radios', domString2);
       $('.boardCard').on('click', 'img', pinItems.makePinBoard);
       $('.boardCard').on('click', '.deleteBoard', deleteBoard);
       $('#add-new-Pin').on('click', addNewPin);

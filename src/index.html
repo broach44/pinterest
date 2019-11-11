@@ -59,24 +59,6 @@
               </div>
               <p>Select a Board: </p>
               <div class="form-group" id="newPin-modal-radios">
-                <!-- <div class="form-check">
-                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                  <label class="form-check-label" for="exampleRadios1">
-                    Hairstyles
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                  <label class="form-check-label" for="exampleRadios2">
-                    Pie Recipes
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                  <label class="form-check-label" for="exampleRadios2">
-                    Gift Ideas
-                  </label>
-                </div> -->
               </div>
             </form>
           </div>
@@ -112,6 +94,30 @@
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             <button type="button" class="btn btn-info" id="add-new-Board">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="updateUserPinModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Move Pin to Different Board</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <p>Select a Board: </p>
+              <div class="form-group" id="updateUserPin-modal-radios">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-info" id="userPin-update-button">Save changes</button>
           </div>
         </div>
       </div>
