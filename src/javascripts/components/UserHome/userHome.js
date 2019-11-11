@@ -80,6 +80,8 @@ const addNewBoard = (e) => {
   boardData.addBoard(newBoard)
     .then(() => {
       $('#addBoardModal').modal('hide');
+      // eslint-disable-next-line no-use-before-define
+      buildUserBoards(uid);
     })
     .catch((error) => console.error(error));
 };
