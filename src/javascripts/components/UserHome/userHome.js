@@ -7,6 +7,7 @@ import pinItems from '../boardPins/boardPins';
 
 import './userHome.scss';
 
+
 const buildUserBoards = () => {
   smash.getCompleteUserDatas()
     .then((boards) => {

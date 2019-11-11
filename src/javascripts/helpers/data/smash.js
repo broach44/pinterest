@@ -3,6 +3,8 @@ import userBoards from './boardData';
 import userPins from './userPins';
 import pins from './pins';
 
+// how can i use the uid auth within this function and integrate into the other functions to build the users unique experience and view.
+
 const getCompleteUserDatas = () => new Promise((resolve, reject) => {
   userData.getUsers().then((singleUser) => {
     userBoards.getBoardsByUid(singleUser.uid).then((boards) => {
