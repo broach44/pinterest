@@ -1,3 +1,5 @@
+import firebase from 'firebase/app';
+import 'firebase/auth';
 import $ from 'jquery';
 
 import smash from '../../helpers/data/smash';
@@ -38,12 +40,27 @@ const addNewPin = (e) => {
     siteUrl: $('#pin-site-url').val(),
     title: $('#pin-title').val(),
   };
-  console.log('before add', newPin);
   pinData.addNewPin(newPin)
     .then(() => {
       $('#addPinModal').modal('hide');
-      // eslint-disable-next-line no-use-before-define
-      console.log('added pin', newPin);
+      // add to userPins so it will display on a board
+      // reprint boards or pins
+    })
+    .catch((error) => console.error(error));
+};
+
+const addNewBoard = (e) => {
+  e.stopImmediatePropagation();
+  const { uid } = firebase.auth().currentUser;
+  const newBoard = {
+    boardTitle: $('#board-title').val(),
+    boardImg: $('#board-image').val(),
+    isPrivate: $('#board-privacy').val(),
+    uid,
+  };
+  boardData.addBoard(newBoard)
+    .then(() => {
+      $('#addBoardModal').modal('hide');
     })
     .catch((error) => console.error(error));
 };
@@ -63,6 +80,7 @@ const buildUserBoards = () => {
       $('.boardCard').on('click', 'img', pinItems.makePinBoard);
       $('.boardCard').on('click', '.deleteBoard', deleteBoard);
       $('#add-new-Pin').on('click', addNewPin);
+      $('#add-new-Board').on('click', addNewBoard);
     })
     .catch((error) => console.error(error));
 };

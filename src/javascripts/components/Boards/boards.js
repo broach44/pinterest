@@ -6,7 +6,7 @@ const makeABoard = (board) => {
     <img src=${board.boardImg} class="card-img" alt="${board.boardTitle}-image">
     <div class="card-body text-center">
       <h5 class="card-title">${board.boardTitle}</h5>
-      <button class="btn btn-info deleteBoard" id="delete-board-${board.id}">Delete Board</button>
+      <button class="btn btn-secondary deleteBoard" id="delete-board-${board.id}">Delete Board</button>
     </div>
   </div>
   `;
