@@ -4,22 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Pinterest</title>
+  <link href="https://fonts.googleapis.com/css?family=Courgette|Raleway&display=swap" rel="stylesheet">  <title>Pinterest</title>
 </head>
 <body>
 
     <nav class="navbar navbar-light">
-      <h2>Pinterest</h2>
+      <h1>Pinterest</h1>
       <div class="ml-auto" id="auth"></div>
       <button class="btn btn-secondary ml-auto" id="navbar-button-logout">Logout</button>
     </nav>
-    
-    <h1 id="pinterestTitle">Pinterest</h1>
-    <div id="addContentDiv">
-      <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#addPinModal">
+    <div id="pinterestTitle">
+      <h1 class="text-center mt-3" id="pinterestTitle">Welcome to Pinterest!</h1>
+      <h3 class="text-center mt-3">Please Login using the button in the top right and Start Pinning!</h3>
+    </div>
+    <div class="text-center align-content-around mt-5" id="addContentDiv">
+      <button type="button" class="btn btn-secondary btn-lg" data-toggle="modal" data-target="#addPinModal">
         Create New Pin
       </button>
-      <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#addBoardModal">
+      <button type="button" class="btn btn-secondary btn-lg" data-toggle="modal" data-target="#addBoardModal">
         Create New Board
       </button>
     </div>
