@@ -7,6 +7,8 @@ import utilities from '../../helpers/utilities';
 import makePinCard from '../makePinCard/makePinCard';
 import userPinsData from '../../helpers/data/userPins';
 
+import './boardPins.scss';
+
 const userBoards = $('#boardDiv');
 const usersPinArea = $('#userPinDiv');
 
@@ -49,7 +51,7 @@ const printPinBoard = (boardId) => {
   smash.getCompleteUserDatas(uid)
     .then((boards) => {
       let domString = `
-      <h4 id="backToBoards">Go Back to Boards</h4>
+      <button class="btn btn-secondary ml-3" id="backToBoards">Go Back to Boards</button>
       <div class="card-columns">
       `;
       const titleOfBoard = boards.find((x) => x.id === boardId);

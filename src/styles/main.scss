@@ -1,13 +1,19 @@
 @import "~bootstrap/scss/bootstrap";
+@import "./fonts";
 
 body {
   background-color: whitesmoke;
+  font-family: $normal-font;
 }
 
 nav {
   background-color: rgb(228,234,243);
   box-shadow: 3px 3px 10px #7c7976;
   color: 	rgb(1,97,97);
+}
+
+h1 {
+  font-family: $cursive-font;
 }
 
 .btn-secondary {

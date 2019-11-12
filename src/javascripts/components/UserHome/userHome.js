@@ -81,13 +81,14 @@ const buildUserBoards = (uid) => {
   smash.getCompleteUserDatas(uid)
     .then((boards) => {
       let domString = `
-      <h2>User Boards</h2>
-      <div class="container d-flex flex-wrap">
+      <h2 class="text-center mt-3">User Boards</h2>
+      <div class="board-container container">
+      <div class="card-columns">
       `;
       boards.forEach((board) => {
         domString += boardMaker.makeABoard(board);
       });
-      domString += '</div>';
+      domString += '</div></div>';
       let domString2 = '';
       boards.forEach((board) => {
         domString2 += boardMaker.createRadioOptions(board);
