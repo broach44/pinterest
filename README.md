@@ -35,9 +35,10 @@ If the user clicks on the image of a pin it will take them to the site that was 
 ## How to Run
 
 - Clone down this project
-- Install http-server from npm [here](https://www.npmjs.com/package/http-server)
-- At the root of this project run the following command: `hs -p 8888`
-- In your browser navigate to [https://localhost:8888](https://localhost:8888)
+- In the terminal run `npm install`
+- Create a firebase project [here](https://console.firebase.google.com/)
+- Create `src/helpers/apiKeys.json` file and add in your firebase keys that were created in the new firebase project.  Feel free to reference the `apiKeys.example.json` file in the project for the structure.
+- Once set up to run enter the following in the terminal `npm start`
 
 ## Demo
 
