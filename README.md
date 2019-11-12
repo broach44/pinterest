@@ -20,9 +20,18 @@ If the user clicks on the image of a pin it will take them to the site that was 
 - Firebase Console used to store application's data collections
 
 ## Screenshots
-
-<Include photos of application here>
-
+#### Welcome View:
+![Welcome-view](https://raw.githubusercontent.com/broach44/pinterest/master/screenshots/welcomeScreen.png)
+#### User Home View:
+![User-home](https://raw.githubusercontent.com/broach44/pinterest/master/screenshots/userHomeView.png)
+#### New Pin Form:
+![New-Pin-Form](https://raw.githubusercontent.com/broach44/pinterest/master/screenshots/createNewPinForm.png)
+#### New Board Form:
+![New-Board-Form](https://raw.githubusercontent.com/broach44/pinterest/master/screenshots/createNewBoard.png)
+#### Board Pin View:
+![Board-pin-view](https://raw.githubusercontent.com/broach44/pinterest/master/screenshots/boardPinView.png)
+#### Board Move Form:
+![Move-Pin-Form](https://raw.githubusercontent.com/broach44/pinterest/master/screenshots/movePinView.png)
 ## How to Run
 
 - Clone down this project
