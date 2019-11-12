@@ -65,7 +65,7 @@ const addNewBoard = (e) => {
   const { uid } = firebase.auth().currentUser;
   const newBoard = {
     boardTitle: $('#board-title').val(),
-    boardImg: $('#board-image').val(),
+    boardImg: $('#board-image-url').val(),
     uid,
   };
   boardData.addBoard(newBoard)
