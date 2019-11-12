@@ -32,16 +32,15 @@ const deletePin = (e) => {
 const updatePin = (e) => {
   e.preventDefault();
   const userPinId = e.target.id.split('update-pin-')[1];
-  console.log(currentBoard, userPinId);
-  const boardIdSelection = $('input[name=boardRadios]:checked').val();
-  console.log('selection', boardIdSelection);
-  // userPinsData.updatedUserPin(userPinId)
-  //   .then(() => {
-  //     // eslint-disable-next-line no-use-before-define
-  //     printPinBoard(currentBoard);
-  //     console.log('printed correct pins?');
-  //   })
-  //   .catch((error) => console.error(error));
+  $('#userPin-update-button').on('click', () => {
+    const boardIdSelection = $('input[name=boardRadios]:checked').val();
+    userPinsData.updatedUserPin(userPinId, boardIdSelection)
+      .then(() => {
+        // eslint-disable-next-line no-use-before-define
+        printPinBoard(currentBoard);
+      })
+      .catch((error) => console.error(error));
+  });
 };
 
 const printPinBoard = (boardId) => {
@@ -64,8 +63,7 @@ const printPinBoard = (boardId) => {
       utilities.printToDom('userPinDiv', domString);
       $('#backToBoards').on('click', goback);
       $('.pin-delete-button').on('click', deletePin);
-      $('#userPin-update-button').on('click', updatePin);
-      // $('.pin-update-button').on('click', )
+      $('.pin-update-button').on('click', updatePin);
     })
     .catch((error) => console.error(error));
 };
