@@ -40,6 +40,7 @@ const updatePin = (e) => {
       .then(() => {
         // eslint-disable-next-line no-use-before-define
         printPinBoard(currentBoard);
+        $('#updateUserPinModal').modal('hide');
       })
       .catch((error) => console.error(error));
   });
