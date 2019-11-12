@@ -15,6 +15,8 @@ const goback = () => {
   usersPinArea.addClass('hide');
 };
 
+let currentBoard = '';
+
 const deletePin = (e) => {
   e.preventDefault();
   const userPinId = e.target.id.split('delete-pin-')[1];
@@ -27,7 +29,19 @@ const deletePin = (e) => {
     .catch((error) => console.error(error));
 };
 
-let currentBoard = '';
+const updatePin = (e) => {
+  e.preventDefault();
+  const userPinId = e.target.id.split('update-pin-')[1];
+  $('#userPin-update-button').on('click', () => {
+    const boardIdSelection = $('input[name=boardRadios]:checked').val();
+    userPinsData.updatedUserPin(userPinId, boardIdSelection)
+      .then(() => {
+        // eslint-disable-next-line no-use-before-define
+        printPinBoard(currentBoard);
+      })
+      .catch((error) => console.error(error));
+  });
+};
 
 const printPinBoard = (boardId) => {
   currentBoard = boardId;
@@ -48,7 +62,8 @@ const printPinBoard = (boardId) => {
       domString += '</div>';
       utilities.printToDom('userPinDiv', domString);
       $('#backToBoards').on('click', goback);
-      $('#userPinDiv').on('click', deletePin);
+      $('.pin-delete-button').on('click', deletePin);
+      $('.pin-update-button').on('click', updatePin);
     })
     .catch((error) => console.error(error));
 };

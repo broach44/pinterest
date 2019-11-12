@@ -35,9 +35,23 @@ const deleteUserPin = (userPinId) => axios.delete(`${baseUrl}/userPins/${userPin
 
 const addNewUserPin = (newUserPin) => axios.post(`${baseUrl}/userPins/.json`, newUserPin);
 
+const updateUserPin = (userPinId, updatedUserPinObject) => axios.put(`${baseUrl}/userPins/${userPinId}.json`, updatedUserPinObject);
+
+const updatedUserPin = (userPinId, newBoardId) => new Promise((resolve, reject) => {
+  axios.get(`${baseUrl}/userPins/${userPinId}.json`)
+    .then((result) => {
+      const userPinObject = result.data;
+      userPinObject.boardId = newBoardId;
+      updateUserPin(userPinId, userPinObject);
+      resolve();
+    })
+    .catch((error) => reject(error));
+});
+
 export default {
   getUserPinsByUid,
   deleteUserPin,
   getUserPinsByBoardId,
   addNewUserPin,
+  updatedUserPin,
 };

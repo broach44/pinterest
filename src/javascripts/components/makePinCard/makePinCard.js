@@ -8,6 +8,7 @@ const makePinCard = (pin, userPinId) => {
       <h5 class="card-title">${pin.title}</h5>
       <p>${pin.description}</p>
       <button class="btn btn-secondary pin-delete-button" id="delete-pin-${userPinId}">Delete Pin</button>
+      <button type="button" data-toggle="modal" data-target="#updateUserPinModal" class="btn btn-secondary pin-update-button" id="update-pin-${userPinId}">Move Pin</button>
     </div>
   </div>
   `;
