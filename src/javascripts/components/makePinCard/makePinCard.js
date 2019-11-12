@@ -2,7 +2,7 @@ import './makePinCard.scss';
 
 const makePinCard = (pin, userPinId) => {
   const domString = `
-  <div class="card col-3 p-0 pinCard" id="${pin.id}">
+  <div class="card p-0 pinCard" id="${pin.id}">
     <img src=${pin.imageUrl} class="card-img" alt="${pin.title}-image">
     <div class="card-body text-center">
       <h5 class="card-title">${pin.title}</h5>

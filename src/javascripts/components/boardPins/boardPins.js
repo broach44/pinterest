@@ -50,7 +50,7 @@ const printPinBoard = (boardId) => {
     .then((boards) => {
       let domString = `
       <h4 id="backToBoards">Go Back to Boards</h4>
-      <div class="container d-flex flex-wrap">
+      <div class="card-columns">
       `;
       const titleOfBoard = boards.find((x) => x.id === boardId);
       const pinnedItems = titleOfBoard.pinItems;
@@ -77,4 +77,4 @@ const makePinBoard = (e) => {
 };
 
 
-export default { makePinBoard };
+export default { makePinBoard, printPinBoard };

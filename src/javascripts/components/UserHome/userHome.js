@@ -32,21 +32,6 @@ const deleteBoard = (e) => {
     .catch((error) => console.error(error));
 };
 
-// const createNewUserPin = (e, newPinId) => {
-//   e.stopImmediatePropagation();
-//   const { uid } = firebase.auth().currentUser;
-//   const newUserPin = {
-//     pinId: newPinId,
-//     uid,
-//     boardId: $('#pin-board-id').val(),
-//   };
-//   userPins.addNewUserPin(newUserPin)
-//     .then(() => {
-//       pinItems.printPinBoard(newUserPin.boardId);
-//     })
-//     .catch((error) => console.error(error));
-// };
-
 const addNewPin = (e) => {
   e.stopImmediatePropagation();
   const newPin = {
@@ -68,6 +53,9 @@ const addNewPin = (e) => {
         boardId: boardIdSelection,
       };
       userPins.addNewUserPin(newUserPin);
+      if ($('#boardDiv').hasClass('hide')) {
+        pinItems.printPinBoard(newUserPin.boardId);
+      }
     })
     .catch((error) => console.error(error));
 };
